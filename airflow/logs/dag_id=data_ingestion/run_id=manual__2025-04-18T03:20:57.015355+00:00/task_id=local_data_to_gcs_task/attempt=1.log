@@ -1,0 +1,76 @@
+[2025-04-18T15:14:55.373+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.local_data_to_gcs_task manual__2025-04-18T03:20:57.015355+00:00 [queued]>
+[2025-04-18T15:14:55.418+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.local_data_to_gcs_task manual__2025-04-18T03:20:57.015355+00:00 [queued]>
+[2025-04-18T15:14:55.420+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-04-18T15:14:55.440+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): local_data_to_gcs_task> on 2025-04-18 03:20:57.015355+00:00
+[2025-04-18T15:14:55.449+0000] {standard_task_runner.py:57} INFO - Started process 1091 to run task
+[2025-04-18T15:14:55.468+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'local_data_to_gcs_task', 'manual__2025-04-18T03:20:57.015355+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpb2bx6fyf']
+[2025-04-18T15:14:55.514+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask local_data_to_gcs_task
+[2025-04-18T15:14:55.575+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-04-18T15:14:55.755+0000] {task_command.py:416} INFO - Running <TaskInstance: data_ingestion.local_data_to_gcs_task manual__2025-04-18T03:20:57.015355+00:00 [running]> on host 65b150f242e5
+[2025-04-18T15:14:55.964+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='local_data_to_gcs_task' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T03:20:57.015355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T03:20:57.015355+00:00'
+[2025-04-18T15:14:56.684+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2604, in _prep_and_do_upload
+    created_json = self._do_upload(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2427, in _do_upload
+    response = self._do_resumable_upload(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2245, in _do_resumable_upload
+    upload, transport = self._initiate_resumable_upload(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2119, in _initiate_resumable_upload
+    upload.initiate(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/resumable_media/requests/upload.py", line 420, in initiate
+    return _request_helpers.wait_and_retry(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/resumable_media/requests/upload.py", line 416, in retriable_request
+    self._process_initiate_response(result)
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/resumable_media/_upload.py", line 518, in _process_initiate_response
+    _helpers.require_status_code(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/resumable_media/_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 404, 'Expected one of', 200, 201)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/data_ingestion.py", line 47, in upload_data_to_gcs
+    blob.upload_from_filename(local_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2926, in upload_from_filename
+    self._handle_filename_and_upload(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2796, in _handle_filename_and_upload
+    self._prep_and_do_upload(
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 2622, in _prep_and_do_upload
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.10/site-packages/google/cloud/storage/blob.py", line 4778, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.NotFound: 404 POST https://storage.googleapis.com/upload/storage/v1/b/fashion_sales-storage-bucket/o?uploadType=resumable: {
+  "error": {
+    "code": 404,
+    "message": "The specified bucket does not exist.",
+    "errors": [
+      {
+        "message": "The specified bucket does not exist.",
+        "domain": "global",
+        "reason": "notFound"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.CREATED: 201>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion.py", line 50, in upload_data_to_gcs
+    logger.error(f'Failed to upload {local_path} to {destination_blob_name}: {e}')
+NameError: name 'destination_blob_name' is not defined
+[2025-04-18T15:14:56.761+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=data_ingestion, task_id=local_data_to_gcs_task, execution_date=20250418T032057, start_date=20250418T151455, end_date=20250418T151456
+[2025-04-18T15:14:56.790+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 42 for task local_data_to_gcs_task (name 'destination_blob_name' is not defined; 1091)
+[2025-04-18T15:14:56.888+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-18T15:14:56.937+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+    - name: staging
+      database: fashion-retail-sales-project
+      schema: fashion_sales_dataset
+
+      tables:
+      - name: customers_salesdata_external_table
+      - name: products_salesdata_external_table
+      - name: transactions_salesdata

@@ -1,0 +1,18 @@
+[2025-04-18T17:46:04.543+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.bq_transactions_salesdata_external_table_task manual__2025-04-18T03:20:57.015355+00:00 [queued]>
+[2025-04-18T17:46:04.559+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.bq_transactions_salesdata_external_table_task manual__2025-04-18T03:20:57.015355+00:00 [queued]>
+[2025-04-18T17:46:04.560+0000] {taskinstance.py:1361} INFO - Starting attempt 5 of 5
+[2025-04-18T17:46:04.634+0000] {taskinstance.py:1382} INFO - Executing <Task(BigQueryCreateExternalTableOperator): bq_transactions_salesdata_external_table_task> on 2025-04-18 03:20:57.015355+00:00
+[2025-04-18T17:46:04.654+0000] {standard_task_runner.py:57} INFO - Started process 1591 to run task
+[2025-04-18T17:46:04.663+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'bq_transactions_salesdata_external_table_task', 'manual__2025-04-18T03:20:57.015355+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmp2qa887b1']
+[2025-04-18T17:46:04.674+0000] {standard_task_runner.py:85} INFO - Job 56: Subtask bq_transactions_salesdata_external_table_task
+[2025-04-18T17:46:04.875+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-04-18T17:46:05.083+0000] {task_command.py:416} INFO - Running <TaskInstance: data_ingestion.bq_transactions_salesdata_external_table_task manual__2025-04-18T03:20:57.015355+00:00 [running]> on host 30488d8db4a7
+[2025-04-18T17:46:05.398+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='bq_transactions_salesdata_external_table_task' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T03:20:57.015355+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T03:20:57.015355+00:00'
+[2025-04-18T17:46:05.449+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-04-18T17:46:05.453+0000] {connection.py:232} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2025-04-18T17:46:05.459+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2025-04-18T17:46:06.221+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=data_ingestion, task_id=bq_transactions_salesdata_external_table_task, execution_date=20250418T032057, start_date=20250418T174604, end_date=20250418T174606
+[2025-04-18T17:46:06.299+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-18T17:46:06.328+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,71 @@
+[2024-12-12T21:22:51.009+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.taxi_data_to_parquet manual__2024-12-12T20:48:43.551545+00:00 [queued]>
+[2024-12-12T21:22:51.036+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.taxi_data_to_parquet manual__2024-12-12T20:48:43.551545+00:00 [queued]>
+[2024-12-12T21:22:51.038+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-12-12T21:22:51.057+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): taxi_data_to_parquet> on 2024-12-12 20:48:43.551545+00:00
+[2024-12-12T21:22:51.096+0000] {standard_task_runner.py:57} INFO - Started process 2067 to run task
+[2024-12-12T21:22:51.108+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'taxi_data_to_parquet', 'manual__2024-12-12T20:48:43.551545+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpkxd7rm5e']
+[2024-12-12T21:22:51.115+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask taxi_data_to_parquet
+[2024-12-12T21:22:51.139+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-12T21:22:51.256+0000] {task_command.py:416} INFO - Running <TaskInstance: data_ingestion.taxi_data_to_parquet manual__2024-12-12T20:48:43.551545+00:00 [running]> on host c106b8e753c3
+[2024-12-12T21:22:51.441+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='taxi_data_to_parquet' AIRFLOW_CTX_EXECUTION_DATE='2024-12-12T20:48:43.551545+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-12T20:48:43.551545+00:00'
+[2024-12-12T21:22:51.444+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-12T21:22:51.446+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/scripts/csv_to_parquet_duckdb.py']
+[2024-12-12T21:22:51.472+0000] {subprocess.py:86} INFO - Output:
+[2024-12-12T21:22:52.371+0000] {subprocess.py:93} INFO - 2024-12-12 21:22:52,368 - INFO - Created directory: /opt/***/data/parquet/yellow/2019
+[2024-12-12T21:24:42.910+0000] {subprocess.py:93} INFO - 2024-12-12 21:24:42,910 - INFO - Successfully converted yellow_tripdata_2019-01.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-01.parquet
+[2024-12-12T21:25:43.223+0000] {subprocess.py:93} INFO - 2024-12-12 21:25:43,223 - INFO - Successfully converted yellow_tripdata_2019-02.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-02.parquet
+[2024-12-12T21:27:01.055+0000] {subprocess.py:93} INFO - 2024-12-12 21:27:01,054 - INFO - Successfully converted yellow_tripdata_2019-03.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-03.parquet
+[2024-12-12T21:28:46.183+0000] {subprocess.py:93} INFO - 2024-12-12 21:28:46,181 - INFO - Successfully converted yellow_tripdata_2019-04.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-04.parquet
+[2024-12-12T21:30:57.020+0000] {subprocess.py:93} INFO - 2024-12-12 21:30:56,913 - INFO - Successfully converted yellow_tripdata_2019-05.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-05.parquet
+[2024-12-12T21:32:45.164+0000] {subprocess.py:93} INFO - 2024-12-12 21:32:45,163 - INFO - Successfully converted yellow_tripdata_2019-06.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-06.parquet
+[2024-12-12T21:34:28.173+0000] {subprocess.py:93} INFO - 2024-12-12 21:34:28,172 - INFO - Successfully converted yellow_tripdata_2019-07.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-07.parquet
+[2024-12-12T21:35:58.840+0000] {subprocess.py:93} INFO - 2024-12-12 21:35:58,833 - INFO - Successfully converted yellow_tripdata_2019-08.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-08.parquet
+[2024-12-12T21:37:45.557+0000] {subprocess.py:93} INFO - 2024-12-12 21:37:45,542 - INFO - Successfully converted yellow_tripdata_2019-09.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-09.parquet
+[2024-12-12T21:39:41.435+0000] {subprocess.py:93} INFO - 2024-12-12 21:39:41,434 - INFO - Successfully converted yellow_tripdata_2019-10.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-10.parquet
+[2024-12-12T21:41:01.665+0000] {subprocess.py:93} INFO - 2024-12-12 21:41:01,664 - INFO - Successfully converted yellow_tripdata_2019-11.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-11.parquet
+[2024-12-12T21:42:03.634+0000] {subprocess.py:93} INFO - 2024-12-12 21:42:03,632 - INFO - Successfully converted yellow_tripdata_2019-12.csv.gz to /opt/***/data/parquet/yellow/2019/yellow_tripdata_2019-12.parquet
+[2024-12-12T21:42:03.644+0000] {subprocess.py:93} INFO - 2024-12-12 21:42:03,643 - INFO - Created directory: /opt/***/data/parquet/yellow/2020
+[2024-12-12T21:43:05.208+0000] {subprocess.py:93} INFO - 2024-12-12 21:43:05,207 - INFO - Successfully converted yellow_tripdata_2020-01.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-01.parquet
+[2024-12-12T21:44:32.230+0000] {subprocess.py:93} INFO - 2024-12-12 21:44:32,229 - INFO - Successfully converted yellow_tripdata_2020-02.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-02.parquet
+[2024-12-12T21:45:17.414+0000] {subprocess.py:93} INFO - 2024-12-12 21:45:17,414 - INFO - Successfully converted yellow_tripdata_2020-03.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-03.parquet
+[2024-12-12T21:45:21.220+0000] {subprocess.py:93} INFO - 2024-12-12 21:45:21,219 - INFO - Successfully converted yellow_tripdata_2020-04.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-04.parquet
+[2024-12-12T21:45:27.791+0000] {subprocess.py:93} INFO - 2024-12-12 21:45:27,789 - INFO - Successfully converted yellow_tripdata_2020-05.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-05.parquet
+[2024-12-12T21:45:36.518+0000] {subprocess.py:93} INFO - 2024-12-12 21:45:36,517 - INFO - Successfully converted yellow_tripdata_2020-06.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-06.parquet
+[2024-12-12T21:45:48.030+0000] {subprocess.py:93} INFO - 2024-12-12 21:45:48,027 - INFO - Successfully converted yellow_tripdata_2020-07.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-07.parquet
+[2024-12-12T21:46:17.237+0000] {subprocess.py:93} INFO - 2024-12-12 21:46:17,236 - INFO - Successfully converted yellow_tripdata_2020-08.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-08.parquet
+[2024-12-12T21:46:42.391+0000] {subprocess.py:93} INFO - 2024-12-12 21:46:42,389 - INFO - Successfully converted yellow_tripdata_2020-09.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-09.parquet
+[2024-12-12T21:47:11.409+0000] {subprocess.py:93} INFO - 2024-12-12 21:47:11,407 - INFO - Successfully converted yellow_tripdata_2020-10.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-10.parquet
+[2024-12-12T21:47:32.212+0000] {subprocess.py:93} INFO - 2024-12-12 21:47:32,212 - INFO - Successfully converted yellow_tripdata_2020-11.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-11.parquet
+[2024-12-12T21:47:55.845+0000] {subprocess.py:93} INFO - 2024-12-12 21:47:55,844 - INFO - Successfully converted yellow_tripdata_2020-12.csv.gz to /opt/***/data/parquet/yellow/2020/yellow_tripdata_2020-12.parquet
+[2024-12-12T21:47:55.854+0000] {subprocess.py:93} INFO - 2024-12-12 21:47:55,854 - INFO - Created directory: /opt/***/data/parquet/green/2019
+[2024-12-12T21:48:08.289+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:08,288 - INFO - Successfully converted green_tripdata_2019-01.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-01.parquet
+[2024-12-12T21:48:19.247+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:19,246 - INFO - Successfully converted green_tripdata_2019-02.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-02.parquet
+[2024-12-12T21:48:31.304+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:31,303 - INFO - Successfully converted green_tripdata_2019-03.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-03.parquet
+[2024-12-12T21:48:36.391+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:36,390 - INFO - Successfully converted green_tripdata_2019-04.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-04.parquet
+[2024-12-12T21:48:40.768+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:40,766 - INFO - Successfully converted green_tripdata_2019-05.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-05.parquet
+[2024-12-12T21:48:50.874+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:50,873 - INFO - Successfully converted green_tripdata_2019-06.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-06.parquet
+[2024-12-12T21:48:56.108+0000] {subprocess.py:93} INFO - 2024-12-12 21:48:56,106 - INFO - Successfully converted green_tripdata_2019-07.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-07.parquet
+[2024-12-12T21:49:07.463+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:07,462 - INFO - Successfully converted green_tripdata_2019-08.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-08.parquet
+[2024-12-12T21:49:14.808+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:14,807 - INFO - Successfully converted green_tripdata_2019-09.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-09.parquet
+[2024-12-12T21:49:23.062+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:23,062 - INFO - Successfully converted green_tripdata_2019-10.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-10.parquet
+[2024-12-12T21:49:37.481+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:37,477 - INFO - Successfully converted green_tripdata_2019-11.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-11.parquet
+[2024-12-12T21:49:49.997+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:49,996 - INFO - Successfully converted green_tripdata_2019-12.csv.gz to /opt/***/data/parquet/green/2019/green_tripdata_2019-12.parquet
+[2024-12-12T21:49:50.003+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:50,003 - INFO - Created directory: /opt/***/data/parquet/green/2020
+[2024-12-12T21:49:56.735+0000] {subprocess.py:93} INFO - 2024-12-12 21:49:56,734 - INFO - Successfully converted green_tripdata_2020-01.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-01.parquet
+[2024-12-12T21:50:00.988+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:00,987 - INFO - Successfully converted green_tripdata_2020-02.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-02.parquet
+[2024-12-12T21:50:06.289+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:06,287 - INFO - Successfully converted green_tripdata_2020-03.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-03.parquet
+[2024-12-12T21:50:08.037+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:08,036 - INFO - Successfully converted green_tripdata_2020-04.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-04.parquet
+[2024-12-12T21:50:09.527+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:09,526 - INFO - Successfully converted green_tripdata_2020-05.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-05.parquet
+[2024-12-12T21:50:10.540+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:10,493 - INFO - Successfully converted green_tripdata_2020-06.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-06.parquet
+[2024-12-12T21:50:12.098+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:12,098 - INFO - Successfully converted green_tripdata_2020-07.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-07.parquet
+[2024-12-12T21:50:13.725+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:13,723 - INFO - Successfully converted green_tripdata_2020-08.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-08.parquet
+[2024-12-12T21:50:15.191+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:15,190 - INFO - Successfully converted green_tripdata_2020-09.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-09.parquet
+[2024-12-12T21:50:16.917+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:16,916 - INFO - Successfully converted green_tripdata_2020-10.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-10.parquet
+[2024-12-12T21:50:18.588+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:18,587 - INFO - Successfully converted green_tripdata_2020-11.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-11.parquet
+[2024-12-12T21:50:20.157+0000] {subprocess.py:93} INFO - 2024-12-12 21:50:20,123 - INFO - Successfully converted green_tripdata_2020-12.csv.gz to /opt/***/data/parquet/green/2020/green_tripdata_2020-12.parquet
+[2024-12-12T21:50:20.276+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-12T21:50:20.706+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=data_ingestion, task_id=taxi_data_to_parquet, execution_date=20241212T204843, start_date=20241212T212251, end_date=20241212T215020
+[2024-12-12T21:50:21.017+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-12T21:50:21.134+0000] {taskinstance.py:2778} INFO - 2 downstream tasks scheduled from follow-on schedule check

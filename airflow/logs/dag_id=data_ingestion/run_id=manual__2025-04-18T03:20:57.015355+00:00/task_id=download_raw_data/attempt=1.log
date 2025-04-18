@@ -1,0 +1,24 @@
+[2025-04-18T17:28:20.147+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.download_raw_data manual__2025-04-18T03:20:57.015355+00:00 [queued]>
+[2025-04-18T17:28:20.236+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.download_raw_data manual__2025-04-18T03:20:57.015355+00:00 [queued]>
+[2025-04-18T17:28:20.237+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-04-18T17:28:20.331+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): download_raw_data> on 2025-04-18 03:20:57.015355+00:00
+[2025-04-18T17:28:20.409+0000] {standard_task_runner.py:57} INFO - Started process 1159 to run task
+[2025-04-18T17:28:21.496+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'download_raw_data', 'manual__2025-04-18T03:20:57.015355+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpow9e3_3j']
+[2025-04-18T17:28:21.901+0000] {standard_task_runner.py:85} INFO - Job 50: Subtask download_raw_data
+[2025-04-18T17:28:22.186+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-04-18T17:28:23.629+0000] {task_command.py:416} INFO - Running <TaskInstance: data_ingestion.download_raw_data manual__2025-04-18T03:20:57.015355+00:00 [running]> on host 30488d8db4a7
+[2025-04-18T17:28:24.986+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='download_raw_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T03:20:57.015355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T03:20:57.015355+00:00'
+[2025-04-18T17:28:24.990+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-18T17:28:24.997+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '/opt/***/scripts/download_data.sh ']
+[2025-04-18T17:28:25.386+0000] {subprocess.py:86} INFO - Output:
+[2025-04-18T17:28:25.611+0000] {subprocess.py:93} INFO - [2025-04-18 17:28:25] INFO: Script started, processing fashion retail stores dataset
+[2025-04-18T17:28:25.704+0000] {subprocess.py:93} INFO - [2025-04-18 17:28:25] INFO: Downloading dataset from Kaggle...
+[2025-04-18T17:30:59.310+0000] {subprocess.py:93} INFO - [2025-04-18 17:30:59] INFO: Extracting files to /opt/***/data/raw...
+[2025-04-18T17:32:59.558+0000] {subprocess.py:93} INFO - [2025-04-18 17:32:59] INFO: Cleaning temporary files...
+[2025-04-18T17:33:00.200+0000] {subprocess.py:93} INFO - [2025-04-18 17:33:00] INFO: Processing completed! Data files available at: /opt/***/data/raw
+[2025-04-18T17:33:00.205+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-04-18T17:33:00.515+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=data_ingestion, task_id=download_raw_data, execution_date=20250418T032057, start_date=20250418T172820, end_date=20250418T173300
+[2025-04-18T17:33:01.048+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-18T17:33:01.865+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,30 @@
+[2025-04-18T19:10:09.801+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.download_raw_data manual__2025-04-18T19:09:54.932311+00:00 [queued]>
+[2025-04-18T19:10:09.908+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.download_raw_data manual__2025-04-18T19:09:54.932311+00:00 [queued]>
+[2025-04-18T19:10:09.911+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-04-18T19:10:10.085+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): download_raw_data> on 2025-04-18 19:09:54.932311+00:00
+[2025-04-18T19:10:10.217+0000] {standard_task_runner.py:57} INFO - Started process 4115 to run task
+[2025-04-18T19:10:10.384+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'download_raw_data', 'manual__2025-04-18T19:09:54.932311+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmp_srkwemx']
+[2025-04-18T19:10:10.415+0000] {standard_task_runner.py:85} INFO - Job 61: Subtask download_raw_data
+[2025-04-18T19:10:10.593+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-04-18T19:10:10.733+0000] {task_command.py:416} INFO - Running <TaskInstance: data_ingestion.download_raw_data manual__2025-04-18T19:09:54.932311+00:00 [running]> on host 30488d8db4a7
+[2025-04-18T19:10:11.366+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='download_raw_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-18T19:09:54.932311+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-18T19:09:54.932311+00:00'
+[2025-04-18T19:10:11.405+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-18T19:10:11.407+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '/opt/***/scripts/download_data.sh ']
+[2025-04-18T19:10:11.451+0000] {subprocess.py:86} INFO - Output:
+[2025-04-18T19:10:11.521+0000] {subprocess.py:93} INFO - [2025-04-18 19:10:11] INFO: Script started, processing fashion retail stores dataset
+[2025-04-18T19:10:11.541+0000] {subprocess.py:93} INFO - [2025-04-18 19:10:11] INFO: Downloading dataset from Kaggle...
+[2025-04-18T19:11:50.566+0000] {subprocess.py:93} INFO - [2025-04-18 19:11:50] INFO: Extracting files to /opt/***/data/raw...
+[2025-04-18T19:13:22.966+0000] {subprocess.py:93} INFO -   error:  invalid compressed data to inflate /opt/***/data/raw/transactions.csv
+[2025-04-18T19:13:23.430+0000] {subprocess.py:93} INFO - [2025-04-18 19:13:23] INFO: ERROR: Extraction failed. File may be corrupted
+[2025-04-18T19:13:23.435+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-04-18T19:13:23.525+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-18T19:13:23.539+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=data_ingestion, task_id=download_raw_data, execution_date=20250418T190954, start_date=20250418T191009, end_date=20250418T191323
+[2025-04-18T19:13:23.763+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 61 for task download_raw_data (Bash command failed. The command returned a non-zero exit code 1.; 4115)
+[2025-04-18T19:13:24.283+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-18T19:13:25.141+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

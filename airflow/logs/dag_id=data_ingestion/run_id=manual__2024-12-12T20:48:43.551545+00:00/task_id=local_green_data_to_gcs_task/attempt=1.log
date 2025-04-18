@@ -1,0 +1,40 @@
+[2024-12-12T21:50:30.320+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion.local_green_data_to_gcs_task manual__2024-12-12T20:48:43.551545+00:00 [queued]>
+[2024-12-12T21:50:30.336+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion.local_green_data_to_gcs_task manual__2024-12-12T20:48:43.551545+00:00 [queued]>
+[2024-12-12T21:50:30.349+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-12-12T21:50:30.427+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): local_green_data_to_gcs_task> on 2024-12-12 20:48:43.551545+00:00
+[2024-12-12T21:50:30.520+0000] {standard_task_runner.py:57} INFO - Started process 2639 to run task
+[2024-12-12T21:50:30.530+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion', 'local_green_data_to_gcs_task', 'manual__2024-12-12T20:48:43.551545+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion.py', '--cfg-path', '/tmp/tmpitekrveo']
+[2024-12-12T21:50:30.584+0000] {standard_task_runner.py:85} INFO - Job 28: Subtask local_green_data_to_gcs_task
+[2024-12-12T21:50:30.713+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-12T21:50:30.946+0000] {task_command.py:416} INFO - Running <TaskInstance: data_ingestion.local_green_data_to_gcs_task manual__2024-12-12T20:48:43.551545+00:00 [running]> on host c106b8e753c3
+[2024-12-12T21:50:31.521+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion' AIRFLOW_CTX_TASK_ID='local_green_data_to_gcs_task' AIRFLOW_CTX_EXECUTION_DATE='2024-12-12T20:48:43.551545+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-12T20:48:43.551545+00:00'
+[2024-12-12T21:50:37.250+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-01.parquet uploaded to green/2019/green_tripdata_2019-01.parquet.
+[2024-12-12T21:50:42.420+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-02.parquet uploaded to green/2019/green_tripdata_2019-02.parquet.
+[2024-12-12T21:50:48.525+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-03.parquet uploaded to green/2019/green_tripdata_2019-03.parquet.
+[2024-12-12T21:50:55.431+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-04.parquet uploaded to green/2019/green_tripdata_2019-04.parquet.
+[2024-12-12T21:51:00.737+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-05.parquet uploaded to green/2019/green_tripdata_2019-05.parquet.
+[2024-12-12T21:51:07.322+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-06.parquet uploaded to green/2019/green_tripdata_2019-06.parquet.
+[2024-12-12T21:51:13.468+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-07.parquet uploaded to green/2019/green_tripdata_2019-07.parquet.
+[2024-12-12T21:51:18.611+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-08.parquet uploaded to green/2019/green_tripdata_2019-08.parquet.
+[2024-12-12T21:51:22.805+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-09.parquet uploaded to green/2019/green_tripdata_2019-09.parquet.
+[2024-12-12T21:51:28.205+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-10.parquet uploaded to green/2019/green_tripdata_2019-10.parquet.
+[2024-12-12T21:51:32.110+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-11.parquet uploaded to green/2019/green_tripdata_2019-11.parquet.
+[2024-12-12T21:51:35.527+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2019/green_tripdata_2019-12.parquet uploaded to green/2019/green_tripdata_2019-12.parquet.
+[2024-12-12T21:51:38.705+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-01.parquet uploaded to green/2020/green_tripdata_2020-01.parquet.
+[2024-12-12T21:51:41.169+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-02.parquet uploaded to green/2020/green_tripdata_2020-02.parquet.
+[2024-12-12T21:51:43.492+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-03.parquet uploaded to green/2020/green_tripdata_2020-03.parquet.
+[2024-12-12T21:51:44.254+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-04.parquet uploaded to green/2020/green_tripdata_2020-04.parquet.
+[2024-12-12T21:51:45.326+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-05.parquet uploaded to green/2020/green_tripdata_2020-05.parquet.
+[2024-12-12T21:51:46.290+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-06.parquet uploaded to green/2020/green_tripdata_2020-06.parquet.
+[2024-12-12T21:51:47.461+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-07.parquet uploaded to green/2020/green_tripdata_2020-07.parquet.
+[2024-12-12T21:51:48.821+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-08.parquet uploaded to green/2020/green_tripdata_2020-08.parquet.
+[2024-12-12T21:51:49.809+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-09.parquet uploaded to green/2020/green_tripdata_2020-09.parquet.
+[2024-12-12T21:51:51.232+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-10.parquet uploaded to green/2020/green_tripdata_2020-10.parquet.
+[2024-12-12T21:51:52.486+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-11.parquet uploaded to green/2020/green_tripdata_2020-11.parquet.
+[2024-12-12T21:51:54.279+0000] {data_ingestion.py:87} INFO - File /opt/***/data/parquet/green/2020/green_tripdata_2020-12.parquet uploaded to green/2020/green_tripdata_2020-12.parquet.
+[2024-12-12T21:51:54.339+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-12-12T21:51:54.646+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=data_ingestion, task_id=local_green_data_to_gcs_task, execution_date=20241212T204843, start_date=20241212T215030, end_date=20241212T215154
+[2024-12-12T21:51:55.579+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-12T21:51:56.061+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
