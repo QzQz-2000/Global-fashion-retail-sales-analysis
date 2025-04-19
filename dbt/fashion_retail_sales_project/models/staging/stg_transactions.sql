@@ -2,13 +2,13 @@
 
 with transactions_data as (
   select *,
-    row_number() over(partition by Invoice_ID, Line) as rn
+    row_number() over(partition by Invoice_ID, Product_ID) as rn
   from {{ source('staging','transactions_salesdata') }}
   where Invoice_ID is not null
 )
 
 select
-    {{ dbt_utils.generate_surrogate_key(['Invoice_ID', 'Line']) }} as transaction_id,
+    {{ dbt_utils.generate_surrogate_key(['Invoice_ID', 'Product_ID']) }} as transaction_id,
 
     -- Matching provided schema
     cast(Invoice_ID as string) as invoice_id,

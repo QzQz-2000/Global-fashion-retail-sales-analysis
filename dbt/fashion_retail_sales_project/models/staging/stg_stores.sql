@@ -2,7 +2,7 @@
 
 select
     `Store ID` as store_id,
-    
+      
     case
         when Country in ('中国', 'China') then 'China'
         when Country = 'Deutschland' then 'Germany'
