@@ -60,7 +60,7 @@ Click here to see the final report: [Global Fashion Retail Sales Report](https:/
 - Google cloud platform environment - [Setup](./setup/GCP-setup.md)
 - Create infra on GCP with Terraform - [Setup](./setup/Terraform-setup.md)
 - Airflow orchestration - [Setup](./setup/Airflow-Setup.md)
-- dbt - Airflow orchestration - [Setup](./setup/Airflow-Setup.md)
+- dbt modeling - [Setup](./setup/Airflow-Setup.md)
 
 ## Summary
 
